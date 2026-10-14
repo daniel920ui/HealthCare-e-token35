@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Healthcare-E-token</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- =========================================
+     SIDEBAR
+========================================== -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+        <h2>Healthcare-E-token</h2>
+        <p>Smart Healthcare System</p>
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <button
+                class="nav-item active"
+                onclick="showPage('dashboard')">
+            <span>🏠</span>
+            <span>Dashboard</span>
+        </button>
+
+
+        <button
+                class="nav-item"
+                onclick="showPage('appointment')">
+            <span>📅</span>
+            <span>Book Appointment</span>
+        </button>
+
+
+        <button
+                class="nav-item"
+                onclick="showPage('token')">
+            <span>🎟️</span>
+            <span>Generate Token</span>
+        </button>
+
+
+        <button
+                class="nav-item"
+                onclick="showPage('queue')">
+            <span>📋</span>
+            <span>Live Queue</span>
+        </button>
+
+
+        <button
+                class="nav-item"
+                onclick="showPage('doctors')">
+            <span>👨‍⚕️</span>
+            <span>Doctors</span>
+        </button>
+
+
+        <button
+                class="nav-item"
+                onclick="showPage('departments')">
+            <span>🏥</span>
+            <span>Departments</span>
+        </button>
+
+
+        <button
+                class="nav-item"
+                onclick="showPage('appointments')">
+            <span>🗓️</span>
+            <span>My Appointments</span>
+        </button>
+
+    </nav>
+
+
+    <div class="sidebar-footer">
+        <p>Healthcare-E-token</p>
+        <span>© 2026</span>
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================
+     MAIN CONTENT
+========================================== -->
+
+<main class="main-content">
+
+
+    <!-- =====================================
+         DASHBOARD PAGE
+    ====================================== -->
+
+    <section
+            id="dashboardPage"
+            class="dashboard-page">
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <h1>Healthcare-E-token</h1>
+
+                <p>
+                    Welcome to the Healthcare
+                    Appointment & Token Management System
+                </p>
+
+            </div>
+
+
+            <div class="datetime">
+
+                <div>📅 Loading...</div>
+
+                <strong>
+                    Loading...
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- STATISTICS -->
+
+        <div class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    👨‍⚕️
+                </div>
+
+                <div class="stat-content">
+
+                        <span>
+                            Total Doctors
+                        </span>
+
+                    <h2 id="totalDoctors">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🏥
+                </div>
+
+                <div class="stat-content">
+
+                        <span>
+                            Departments
+                        </span>
+
+                    <h2 id="totalDepartments">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📅
+                </div>
+
+                <div class="stat-content">
+
+                        <span>
+                            Appointments
+                        </span>
+
+                    <h2 id="totalAppointments">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🎟️
+                </div>
+
+                <div class="stat-content">
+
+                        <span>
+                            Waiting Tokens
+                        </span>
+
+                    <h2 id="totalWaitingTokens">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- QUICK ACTIONS -->
+
+        <div class="quick-actions">
+
+            <h2>
+                Quick Actions
+            </h2>
+
+
+            <div class="quick-actions-grid">
+
+
+                <div
+                        class="quick-action-card"
+                        onclick="showAppointmentPage()">
+
+                    <div class="quick-action-icon">
+                        📅
+                    </div>
+
+                    <h3>
+                        Book Appointment
+                    </h3>
+
+                    <p>
+                        Schedule an appointment
+                        with a doctor.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                        class="quick-action-card"
+                        onclick="showTokenPage()">
+
+                    <div class="quick-action-icon">
+                        🎟️
+                    </div>
+
+                    <h3>
+                        Generate Token
+                    </h3>
+
+                    <p>
+                        Generate your queue token
+                        for an appointment.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                        class="quick-action-card"
+                        onclick="showPage('queue')">
+
+                    <div class="quick-action-icon">
+                        📋
+                    </div>
+
+                    <h3>
+                        Live Queue
+                    </h3>
+
+                    <p>
+                        Check the current
+                        doctor queue.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                        class="quick-action-card"
+                        onclick="showPage('doctors')">
+
+                    <div class="quick-action-icon">
+                        👨‍⚕️
+                    </div>
+
+                    <h3>
+                        Doctors
+                    </h3>
+
+                    <p>
+                        View doctors and
+                        their departments.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DASHBOARD FOOTER -->
+
+        <footer class="dashboard-footer">
+
+            <p>
+                Healthcare-E-token
+            </p>
+
+            <span>
+                    Smart Healthcare
+                    Appointment & Token Management
+                </span>
+
+        </footer>
+
+    </section>
+
+
+
+    <!-- =====================================
+         BOOK APPOINTMENT PAGE
+    ====================================== -->
+
+    <section
+            id="appointmentPage"
+            class="appointment-page"
+            style="display: none;">
+
+        <div class="appointment-header">
+
+            <div>
+
+                <h2>
+                    Book Appointment
+                </h2>
+
+                <p>
+                    Schedule your appointment
+                    with a doctor.
+                </p>
+
+            </div>
+
+
+            <button
+                    class="back-btn"
+                    onclick="showDashboard()">
+
+                ← Back to Dashboard
+
+            </button>
+
+        </div>
+
+
+
+        <div class="appointment-container">
+
+            <form
+                    id="appointmentForm">
+
+
+                <!-- PATIENT ID -->
+
+                <div class="form-group">
+
+                    <label for="patientId">
+                        Patient ID
+                    </label>
+
+                    <input
+                            type="number"
+                            id="patientId"
+                            placeholder="Enter Patient ID"
+                            required>
+
+                </div>
+
+
+
+                <!-- DEPARTMENT -->
+
+                <div class="form-group">
+
+                    <label for="departmentId">
+                        Department
+                    </label>
+
+                    <select
+                            id="departmentId"
+                            required>
+
+                        <option value="">
+                            Select Department
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- DOCTOR -->
+
+                <div class="form-group">
+
+                    <label for="doctorId">
+                        Doctor
+                    </label>
+
+                    <select
+                            id="doctorId"
+                            required
+                            disabled>
+
+                        <option value="">
+                            Select Department First
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- DATE & TIME -->
+
+                <div class="form-group">
+
+                    <label for="appointmentDate">
+                        Appointment Date & Time
+                    </label>
+
+                    <input
+                            type="datetime-local"
+                            id="appointmentDate"
+                            required>
+
+                </div>
+
+
+
+                <!-- STATUS -->
+
+                <div class="form-group">
+
+                    <label for="appointmentStatus">
+                        Status
+                    </label>
+
+                    <select
+                            id="appointmentStatus">
+
+                        <option value="BOOKED">
+                            BOOKED
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- SUBMIT -->
+
+                <button
+                        type="submit"
+                        class="submit-btn">
+
+                    Book Appointment
+
+                </button>
+
+
+
+                <!-- MESSAGE -->
+
+                <div
+                        id="appointmentMessage"
+                        class="form-message">
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         GENERATE TOKEN PAGE
+    ====================================== -->
+
+    <section
+            id="tokenPage"
+            class="token-page"
+            style="display: none;">
+
+        <div class="appointment-header">
+
+            <div>
+
+                <h2>
+                    Generate Token
+                </h2>
+
+                <p>
+                    Generate a queue token
+                    for your appointment.
+                </p>
+
+            </div>
+
+
+            <button
+                    class="back-btn"
+                    onclick="showDashboard()">
+
+                ← Back to Dashboard
+
+            </button>
+
+        </div>
+
+
+
+        <div class="token-container">
+
+            <form id="tokenForm">
+
+                <div class="form-group">
+
+                    <label for="tokenAppointmentId">
+                        Appointment ID
+                    </label>
+
+                    <input
+                            type="number"
+                            id="tokenAppointmentId"
+                            placeholder="Enter Appointment ID"
+                            required>
+
+                </div>
+
+
+                <button
+                        type="submit"
+                        class="submit-btn">
+
+                    Generate Token
+
+                </button>
+
+
+                <div
+                        id="tokenMessage"
+                        class="form-message">
+
+                </div>
+
+            </form>
+
+
+
+            <!-- TOKEN RESULT -->
+
+            <div
+                    id="tokenResult"
+                    class="token-result"
+                    style="display: none;">
+
+                <h3>
+                    Token Generated
+                </h3>
+
+                <div class="generated-token">
+                        <span id="generatedToken">
+                            T000
+                        </span>
+                </div>
+
+
+                <div class="token-details">
+
+                    <p>
+                        <strong>
+                            Patient:
+                        </strong>
+
+                        <span id="tokenPatient">
+                                -
+                            </span>
+                    </p>
+
+
+                    <p>
+                        <strong>
+                            Doctor:
+                        </strong>
+
+                        <span id="tokenDoctor">
+                                -
+                            </span>
+                    </p>
+
+
+                    <p>
+                        <strong>
+                            Status:
+                        </strong>
+
+                        <span id="tokenStatus">
+                                -
+                            </span>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         LIVE QUEUE PAGE
+    ====================================== -->
+
+    <section
+            id="queuePage"
+            class="queue-page"
+            style="display: none;">
+
+        <div class="appointment-header">
+
+            <div>
+
+                <h2>
+                    Live Queue
+                </h2>
+
+                <p>
+                    View the current doctor
+                    token queue.
+                </p>
+
+            </div>
+
+
+            <button
+                    class="back-btn"
+                    onclick="showDashboard()">
+
+                ← Back to Dashboard
+
+            </button>
+
+        </div>
+
+
+
+        <div class="queue-container">
+
+
+            <!-- DOCTOR SEARCH -->
+
+            <div class="queue-search">
+
+                <label for="queueDoctorId">
+                    Doctor ID
+                </label>
+
+                <input
+                        type="number"
+                        id="queueDoctorId"
+                        placeholder="Enter Doctor ID">
+
+                <button
+                        class="submit-btn"
+                        onclick="loadQueue()">
+
+                    View Queue
+
+                </button>
+
+            </div>
+
+
+
+            <div
+                    id="queueMessage"
+                    class="form-message">
+
+            </div>
+
+
+
+            <!-- SERVING TOKEN -->
+
+            <div class="serving-card">
+
+                <div class="queue-header">
+
+                    <h3>
+                        Now Serving
+                    </h3>
+
+                </div>
+
+
+                <div
+                        id="servingToken"
+                        class="serving-token">
+
+                    T000
+
+                </div>
+
+
+                <p>
+
+                    Patient:
+                    <strong id="servingPatient">
+                        -
+                    </strong>
+
+                </p>
+
+
+                <p>
+
+                    Doctor:
+                    <strong id="servingDoctor">
+                        -
+                    </strong>
+
+                </p>
+
+            </div>
+
+
+
+            <!-- WAITING -->
+
+            <div class="waiting-queue">
+
+                <div class="queue-header">
+
+                    <h3>
+                        Waiting Queue
+                    </h3>
+
+                    <span>
+                            Waiting:
+                            <strong id="waitingCount">
+                                0
+                            </strong>
+                        </span>
+
+                </div>
+
+
+                <div id="waitingQueue">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CALL NEXT -->
+
+            <button
+                    class="submit-btn"
+                    onclick="callNextToken()">
+
+                Call Next Token
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         DOCTORS PAGE
+    ====================================== -->
+
+    <section
+            id="doctorsPage"
+            class="doctors-page"
+            style="display: none;">
+
+        <div class="appointment-header">
+
+            <div>
+
+                <h2>
+                    Doctors
+                </h2>
+
+                <p>
+                    View available doctors
+                    and their departments.
+                </p>
+
+            </div>
+
+
+            <button
+                    class="back-btn"
+                    onclick="showDashboard()">
+
+                ← Back to Dashboard
+
+            </button>
+
+        </div>
+
+
+
+        <div
+                id="doctorMessage"
+                class="doctor-message">
+
+            Loading doctors...
+
+        </div>
+
+
+        <div
+                id="doctorsGrid"
+                class="doctors-grid">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         DEPARTMENTS PAGE
+    ====================================== -->
+
+    <section
+            id="departmentsPage"
+            class="departments-page"
+            style="display: none;">
+
+        <div class="appointment-header">
+
+            <div>
+
+                <h2>
+                    Departments
+                </h2>
+
+                <p>
+                    Explore healthcare
+                    departments.
+                </p>
+
+            </div>
+
+
+            <button
+                    class="back-btn"
+                    onclick="showDashboard()">
+
+                ← Back to Dashboard
+
+            </button>
+
+        </div>
+
+
+
+        <div
+                id="departmentMessage"
+                class="department-message">
+
+            Loading departments...
+
+        </div>
+
+
+        <div
+                id="departmentsGrid"
+                class="departments-grid">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         MY APPOINTMENTS PAGE
+    ====================================== -->
+
+    <section
+            id="appointmentsPage"
+            class="appointments-page"
+            style="display: none;">
+
+        <div class="appointment-header">
+
+            <div>
+
+                <h2>
+                    My Appointments
+                </h2>
+
+                <p>
+                    View your scheduled
+                    appointments.
+                </p>
+
+            </div>
+
+
+            <button
+                    class="back-btn"
+                    onclick="showDashboard()">
+
+                ← Back to Dashboard
+
+            </button>
+
+        </div>
+
+
+
+        <div class="my-appointment-search">
+
+            <div class="form-group">
+
+                <label for="myPatientId">
+                    Patient ID
+                </label>
+
+                <input
+                        type="number"
+                        id="myPatientId"
+                        placeholder="Enter Patient ID">
+
+            </div>
+
+
+            <button
+                    class="submit-btn"
+                    onclick="loadMyAppointments()">
+
+                View My Appointments
+
+            </button>
+
+        </div>
+
+
+
+        <div
+                id="myAppointmentMessage"
+                class="form-message">
+
+        </div>
+
+
+
+        <div
+                id="appointmentsList"
+                class="appointments-list">
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================== -->
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
